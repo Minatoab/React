@@ -1,45 +1,67 @@
-import React from 'react';
-import Reac ,{ Component } from 'react';
 
-class Counter extends Component {
-
-state = {
-
-value : this.props.value
+import React, { Component } from 'react';
+class  Counter extends Component {
+    state = {
+value : this.props.counter.value,
+tags : ['tag1','tag2','tag3']
 
 
-}
+    };
+ //constructor () {
+//super();
+//this.handleIncrememt = this.handleIncrememt.bind(this);
 
 
-handleIncrement  = () => {
-   
-    this.setState({ value : this.state.value + 1})
 
+ //}
+    handleIncrememt = () => {
+
+        
+          this.setState({value : this.state.value + 1})
+
+    }  
+
+    handleDecrement = () => {
+
+       
+        this.setState({value : this.state.value - 1})
+
+  }  
+
+
+
+
+
+
+
+    render() { 
+
+        return (
+        <div >
+            
+            <span   className={this.getbadge()} >{this.formatCount()}</span> 
+            <button onClick={this.handleIncrememt} className='btn btn-secondary btn-sm'>+</button>
+            <span> </span>
+            <button onClick={this.handleDecrement} className='btn btn-secondary btn-sm'>-</button>
+            <button onClick = {  ()=> this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
+            
+
+           
+            </div >
+        );
     }
 
-
-    
-
-
-render() {
-
- 
-
-    return  (
-    <div>
-        <span className= {this.getclasses()}>{this.state.value}</span> 
-        <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">+</button> 
-    </div>
-    );
-}
-
-
-    getclasses() {
-        let classes = "badge m-2 badge-";
-        classes += this.state.value === 0 ? "warning" : this.state.value < 0 ? "secondary" : "primary";
+    getbadge() {
+        let classes = 'badge m-3 badge-';
+        classes += this.state.value === 0 ? 'warning' : 'primary';
         return classes;
     }
-}
-export default Counter;
 
+formatCount (){
 
+return this.state.value === 0 ? 'Zero'  : this.state.value
+
+};
+ 
+};
+export default Counter ;
