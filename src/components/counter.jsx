@@ -10,10 +10,14 @@ class  Counter extends Component {
 
  //}
 
+<<<<<<< HEAD
 
    
 
 
+=======
+// nouvelle 
+>>>>>>> nouvelle
     render() { 
 
         return (
