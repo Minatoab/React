@@ -10,6 +10,10 @@ class  Counter extends Component {
 
  //}
 // push origin
+valider ()
+{
+    return 0
+}
 
     render() { 
 
