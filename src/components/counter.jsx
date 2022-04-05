@@ -9,11 +9,10 @@ class  Counter extends Component {
 
 
  //}
-// push origin
-valider ()
-{
-    return 0
-}
+
+
+   
+
 
     render() { 
 
@@ -49,6 +48,6 @@ formatCount (){
 return this.props.counter.value === 0 ? 'Zero'  : this.props.counter.value
 
 };
- 
-};
+}
+
 export default Counter ;
